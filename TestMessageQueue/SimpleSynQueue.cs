@@ -12,7 +12,7 @@ namespace TestMessageQueue
          * 简单地说，AutoResetEvent分为T和F两种状态
          * 调用Set函数，使F变成T状态
          * 调用WaitOne函数，使T变成F状态（若设置超时，则超时后由F变成T状态）
-         * T状态能让程序继续运行，F状态则会让程序卡住
+         * T状态能让其它线程继续运行，F状态则会让其它线程进入等待状态
          */
 
         private readonly Queue<T> _queue;
